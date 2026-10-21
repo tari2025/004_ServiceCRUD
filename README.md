@@ -10,4 +10,8 @@ PUT
 <br/>
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8b3ee9d3-9e8f-4f15-b8b3-e05863f96407" />
 <br/>
+DELETE
+<br/>
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ffc128bb-e5c7-4515-a944-f37976498c79" />
+<br/>
 
