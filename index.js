@@ -15,3 +15,17 @@ const pool = new Pool({
     password: "1234",
     port: 5432,
 });
+
+// GET: Menampilkan semua data
+app.get("/", (req, res) => {
+    console.log("TEST DATA /");
+
+    pool.query("SELECT * FROM biodata ORDER BY id")
+        .then(result => {
+            res.json(result.rows);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+        });
+});
