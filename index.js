@@ -1,3 +1,4 @@
+
 import express from "express";
 import pg from "pg";
 
@@ -29,3 +30,16 @@ app.get("/", (req, res) => {
             res.status(500).send("Internal Server Error");
         });
 });
+
+// POST: Tambah data
+app.post("/biodata", (req, res) => {
+    const { id, nama, nim, kelas } = req.body;
+
+    pool.query(
+        "INSERT INTO biodata (id, nama, nim, kelas) VALUES ($1, $2, $3, $4) RETURNING *",
+        [id, nama, nim, kelas]
+    )
+        .then(result => {
+            res.status(201).json(result.rows[0]);
+        })
+        
